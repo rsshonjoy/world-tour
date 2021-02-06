@@ -4,8 +4,8 @@ fetch('https://restcountries.eu/rest/v2/all')
 
 const displayCountries = countries =>{
     const countriesDiv = document.getElementById('countries');
-    for (let i = 0; i < countries.length; i++) {
-        const country = countries[i];
+    countries.forEach(country => {
+        // const country = countries[i];
         const countryDiv = document.createElement('div');
 
         countryDiv.className = 'country';
@@ -16,5 +16,18 @@ const displayCountries = countries =>{
         `
         countryDiv.innerHTML = countryInfo;
         countriesDiv.appendChild(countryDiv);
-    }
+    });
+    // for (let i = 0; i < countries.length; i++) {
+    //     const country = countries[i];
+    //     const countryDiv = document.createElement('div');
+
+    //     countryDiv.className = 'country';
+
+    //     const countryInfo = `
+    //         <h3 class="country-name">${country.name}</h3>
+    //         <p>${country.capital}</p>
+    //     `
+    //     countryDiv.innerHTML = countryInfo;
+    //     countriesDiv.appendChild(countryDiv);
+    // }
 }
